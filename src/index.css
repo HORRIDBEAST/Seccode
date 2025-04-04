@@ -1,0 +1,81 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 217 33% 17%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 185 92% 44%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 265 89% 78%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-seccode-dark text-seccode-light;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-seccode-cyan to-seccode-purple bg-clip-text text-transparent;
+  }
+  
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+  
+  .card-glow::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-seccode-cyan to-seccode-purple opacity-50 blur pointer-events-none;
+  }
+  
+  .card-glow-content {
+    @apply relative bg-seccode-blue rounded-lg z-10;
+  }
+  
+  .typing-container {
+    @apply overflow-hidden whitespace-nowrap border-r-2 inline-block;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .glassmorphism {
+    @apply bg-seccode-blue/40 backdrop-blur-md border border-seccode-cyan/20;
+  }
+}
