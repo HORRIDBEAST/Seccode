@@ -17,9 +17,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path='/securecoding' element={<SecureCoding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-          <Route path='/securecoding' element={<SecureCoding />} />
+          
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
